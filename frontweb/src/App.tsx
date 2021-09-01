@@ -1,8 +1,14 @@
-import "./assets/styles/custom.scss";
-import "./App.css";
+import Navbar from 'components/Navbar';
+import './assets/styles/custom.scss';
+import './App.css';
 
 function App() {
-  return <h1 className="bg-primary">Hello Movie Flix</h1>;
+  return (
+    <>
+      <Navbar />
+      <h1>Hello Movie Flix</h1>;
+    </>
+  );
 }
 
 export default App;

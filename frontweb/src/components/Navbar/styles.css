@@ -1,0 +1,11 @@
+.main-nav {
+  padding-left: 18px;
+  height: 68px;
+}
+
+.nav-logo-text, .nav-logo-text:hover {
+  color: #000000;
+}
+.nav-logo-text h4 {
+  font-size: 24px;
+}
