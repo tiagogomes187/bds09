@@ -13,12 +13,18 @@
 }
 
 @media (min-width: 576px) {
+    .auth-container {
+        padding: 40px;
+    }
     .auth-form-container {
         width: 480px;
     }
 }
 
 @media (min-width: 768px) {
+    .auth-container {
+        padding: 50px;
+    }
     .auth-form-container {
         width: 550px;
     }
