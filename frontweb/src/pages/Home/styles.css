@@ -1,0 +1,15 @@
+.home-container{
+    border: 2px solid rgb(0, 26, 255);
+}
+
+.home-card{
+    border: 1px solid rgb(224, 6, 188);
+}
+
+.home-content-container{
+    border: 1px solid red;
+}
+
+.home-image-container{
+    border: 1px solid rgb(60, 255, 0);
+}
