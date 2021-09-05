@@ -1,0 +1,9 @@
+.movie-catalog-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-catalog-content h1{
+    padding: 20px 0 0 20px;
+    font-size: 24px;
+}

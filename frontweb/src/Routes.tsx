@@ -1,25 +1,23 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from 'components/Navbar';
-import MoviesDetails from 'pages/MoviesDetails';
+
+import MovieDetails from 'pages/MovieDetails';
 import MovieCatalog from 'pages/MovieCatalog';
 import Auth from 'pages/Admin/Auth';
+import Home from 'pages/Home';
 
 const Routes = () => (
   <BrowserRouter>
     <Navbar />
     <Switch>
-      <Redirect from="/" to="/admin/auth/login" exact />
-      <Route path="/">
-        <Auth />
+      <Route path="/" exact>
+        <Home />
       </Route>
-      <Route path="/movies">
+      <Route path="/movies" exact>
         <MovieCatalog />
       </Route>
       <Route path="/movies/:movieId">
-        <MoviesDetails />
-      </Route>
-      <Route path="/admin/auth">
-        <Auth />
+        <MovieDetails />
       </Route>
     </Switch>
   </BrowserRouter>

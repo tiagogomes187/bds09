@@ -1,15 +1,22 @@
 .home-container{
-    border: 2px solid rgb(0, 26, 255);
+    padding: 30px;
 }
 
-.home-card{
-    border: 1px solid rgb(224, 6, 188);
+.home-banner-container h1{
+    margin-bottom: 30px;
 }
 
-.home-content-container{
-    border: 1px solid red;
-}
+@media (min-width: 768px){
+    .home-container{
+        padding: 50px;
+    }
 
-.home-image-container{
-    border: 1px solid rgb(60, 255, 0);
+
+    .home-banner-container h1{
+        font-size: 50px;
+    }
+
+    .home-banner-container p{
+        font-size: 30px;
+    }
 }
