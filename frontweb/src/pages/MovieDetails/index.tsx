@@ -15,12 +15,8 @@ type FormData = {
 };
 
 type UrlParams = {
-  movieId: string;
+  reviewId: string;
 };
-
-
-
-
 
 
 const MovieDetails = () => {
@@ -30,19 +26,19 @@ const MovieDetails = () => {
     console.log(formData);
   };
 
-  const { movieId } = useParams<UrlParams>();
+  const { reviewId } = useParams<UrlParams>();
   const [user, setUser] = useState<User>();
   const [review, setReview] = useState<Review>();
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/movies/${movieId}`)
+      .get(`${BASE_URL}/movies/${reviewId}`)
       .then((response) => {
         setReview(response.data);
         setUser(response.data);
       });
       
-  }, [movieId]);
+  }, [reviewId]);
 
   return (
     <div className="movie-details-container">

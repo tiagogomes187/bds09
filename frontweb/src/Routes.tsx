@@ -11,14 +11,8 @@ const Routes = () => (
   <BrowserRouter>
     <Navbar />
     <Switch>
-      
       <Route path="/home" exact>
-      <Home />
-      </Route>
-
-      <Redirect from="/" to="/admin/auth/login" exact />
-      <Route path="/">
-        <Auth />
+        <Home />
       </Route>
 
       <Route path="/movies" exact>
@@ -29,6 +23,11 @@ const Routes = () => (
         <MovieDetails />
       </Route>
 
+      <Redirect from="/" to="/admin/auth/login" exact />
+      <Route path="/">
+        <Auth />
+      </Route>
+
       <Route path="/admin/auth" exact>
         <Auth />
       </Route>
@@ -36,7 +35,6 @@ const Routes = () => (
       <Route path="/admin" exact>
         <Admin />
       </Route>
-
     </Switch>
   </BrowserRouter>
 );
