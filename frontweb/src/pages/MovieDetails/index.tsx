@@ -1,11 +1,27 @@
 import { ReactComponent as StarImage } from 'assets/images/star.svg';
+import axios from 'axios';
 import ButtonIcon from 'components/ButtonIcon';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useParams } from 'react-router-dom';
+import { Movie } from 'types/movie';
+import { Review } from 'types/review';
+import { User } from 'types/user';
+import { BASE_URL } from 'util/requests';
 import './styles.css';
 
 type FormData = {
   avalia: string;
 };
+
+type UrlParams = {
+  movieId: string;
+};
+
+
+
+
+
 
 const MovieDetails = () => {
   const { register, handleSubmit } = useForm<FormData>();
@@ -13,6 +29,20 @@ const MovieDetails = () => {
   const onSubmit = (formData: FormData) => {
     console.log(formData);
   };
+
+  const { movieId } = useParams<UrlParams>();
+  const [user, setUser] = useState<User>();
+  const [review, setReview] = useState<Review>();
+
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/movies/${movieId}`)
+      .then((response) => {
+        setReview(response.data);
+        setUser(response.data);
+      });
+      
+  }, [movieId]);
 
   return (
     <div className="movie-details-container">
@@ -43,39 +73,13 @@ const MovieDetails = () => {
         <div className="movie-details-description">
           <div className="movie-details-evaluator-name">
             <StarImage />
-            <h6>Maria Silva</h6>
+            <h6>{user?.name}</h6>
           </div>
           <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
+            {review?.text}
           </p>
         </div>
-        <div className="movie-details-description">
-          <div className="movie-details-evaluator-name">
-            <StarImage />
-            <h6>Maria Silva</h6>
-          </div>
-          <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-          </p>
-        </div>
-        <div className="movie-details-description">
-          <div className="movie-details-evaluator-name">
-            <StarImage />
-            <h6>Maria Silva</h6>
-          </div>
-          <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-          </p>
-        </div>
-        <div className="movie-details-description">
-          <div className="movie-details-evaluator-name">
-            <StarImage />
-            <h6>Maria Silva</h6>
-          </div>
-          <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-          </p>
-        </div>
+        
       </div>
     </div>
   );

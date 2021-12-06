@@ -13,7 +13,7 @@ const Routes = () => (
     <Switch>
       
       <Route path="/home" exact>
-        <Home />
+      <Home />
       </Route>
 
       <Redirect from="/" to="/admin/auth/login" exact />
