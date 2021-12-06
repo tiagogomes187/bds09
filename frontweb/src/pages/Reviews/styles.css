@@ -1,0 +1,48 @@
+.review-details-container {
+  padding: 15px;
+  border: 1px solid red;
+}
+
+.review-details-container h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.review-details-card {
+  margin-bottom: 20px;
+
+  border: 1px solid rgb(19, 0, 128);
+}
+
+.review-details-form {
+  border: 2px solid orange;
+}
+
+.review-login-submit {
+  margin-bottom: 24px;
+}
+
+.review-details-content {
+  border: 1px solid purple;
+}
+
+.review-details-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-details-evaluator-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.review-details-content h6 {
+  margin-left: 15px;
+  margin-bottom: 9px;
+}
+
+.review-details-content p {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #e1e1e1;
+}

@@ -1,4 +1,3 @@
-import MovieDetails from 'pages/MovieDetails';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 
@@ -25,17 +24,23 @@ const MovieCatalog = () => {
       <div className="movie-catalog-container">
         <div className="movie-catalog-content">
           <h1>Tela listagem de filmes</h1>
-        </div>
-       
-        <div className="row">
-    
+        <div className="row movies-list">
             <div className="col-sm-6 col-lg-4 col-xl-3" key={movie.id}>
               <Link to="/movies/1">
                 <p>Acessar /movies/1</p>
               </Link>
             </div>
-    
-     
+            <div className="col-sm-6 col-lg-4 col-xl-3" key={movie.id}>
+              <Link to="/movies/1">
+                <p>Acessar /movies/2</p>
+              </Link>
+            </div>
+            <div className="col-sm-6 col-lg-4 col-xl-3" key={movie.id}>
+              <Link to="/movies/1">
+                <p>Acessar /movies/3</p>
+              </Link>
+            </div>
+      </div>
       </div>
       </div>
     </>
