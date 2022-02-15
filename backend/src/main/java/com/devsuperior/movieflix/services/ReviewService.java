@@ -48,5 +48,19 @@ public class ReviewService {
 		
 		return new ReviewDTO(entity, entity.getUser());
 	}
+
+	public List<ReviewDTO> findAll() {
+		User userEntity = new User();
+		Review entity = new Review();
+		
+		userEntity.setId(userService.returnDataUserLoged().getId());
+		userEntity.setName(userService.returnDataUserLoged().getName());
+		userEntity.setEmail(userService.returnDataUserLoged().getEmail());
+		entity.setUser(userEntity);
+		
+		List<Review> list = repository.findAll(); 
+		return list.stream().map( x -> new ReviewDTO(x, entity.getUser())).collect(Collectors.toList());
+	}
+	
 	
 }

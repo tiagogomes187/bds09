@@ -25,7 +25,7 @@ const Routes = () => (
         <MovieDetails />
       </Route>
 
-      <Route path="/reviews">
+      <Route path="/reviews" exact>
         <Reviews />
       </Route>
 
